@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        width: 250px;
+        margin: 60px auto;
+        background-color: #111;
+        padding: 20px;
+      }
+      #inputfield {
+        width: 100%;
+        padding: 9px;
+        margin-bottom: 10px;
+      }
+      .btn {
+        width: 100%;
+        padding: 6px;
+        margin-bottom: 3px;
+      }
+      .btnn {
+        width: 100%;
+        padding: 6px;
+        margin-bottom: 3px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <input type="text" id="inputfield" placeholder="Enter any color" />
+      <button class="btn">Apply Color</button>
+      <button class="btnn">Random Color</button>
+    </div>
+
+    <script>
+      const inputField = document.querySelector("#inputfield");
+      const btn = document.querySelector(".btn");
+      const btnn = document.querySelector(".btnn");
+
+      const colors = [
+        "blue",
+        "green",
+        "yellow",
+        "red",
+        "white",
+        "#fff",
+        "#111",
+        "#222",
+        "#202020",
+        "purple",
+        "violet"     
+      ];
+
+      btn.addEventListener("click", function () {
+        document.body.style.backgroundColor = inputField.value;
+      });
+
+      btnn.addEventListener("click", function () {
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        document.body.style.backgroundColor = randomColor;
+        inputField.value = randomColor;
+      });
+    </script>
+  </body>
+</html>
